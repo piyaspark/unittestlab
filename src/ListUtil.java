@@ -3,7 +3,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * Class for list utility method.
  *
+ * @author Piyaphol Wiengperm 6010545846
  */
 public class ListUtil {
 
@@ -20,20 +22,20 @@ public class ListUtil {
         return unique.size();
     }
 
-    /**
-     *
-     * @param array
-     * @param element
-     * @param <T>
-     * @return
-     */
-    public static <T extends Comparable<? super T>> int binarySearch(T[] array, T element){
-        if(element == null)throw new IllegalArgumentException("Search element must not be null");
-        for(int i = 0;i<array.length;i++){
-            if(array[i] == element){
-                return i;
-            }
-        }
-        return -1;
-    }
+//    /**
+//     *
+//     * @param array
+//     * @param element
+//     * @param <T>
+//     * @return
+//     */
+//    public static <T extends Comparable<? super T>> int binarySearch(T[] array, T element){
+//        if(element == null)throw new IllegalArgumentException("Search element must not be null");
+//        for(int i = 0;i<array.length;i++){
+//            if(array[i] == element){
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
 }
