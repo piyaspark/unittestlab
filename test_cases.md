@@ -20,7 +20,7 @@
 
 * testBinarySearch: Test that the binarySearch can work correctly.
 
-* testDuplicateElementInArray: Test that the binarySearch can work with arrays that have different element.
+* testDuplicateElementInArray: Test that the binarySearch can't work with arrays that have different element.
 
 * testNoElementInArray: Test that when no element in the arrays, it will return -1.
 
