@@ -123,7 +123,7 @@ public class ListUtilTest {
     }
 
     /**
-     * Test that the binarySearch can work with arrays that have different element.
+     * Test that the binarySearch can work only with arrays that have different element.
      */
     @Test (expected = AssertionError.class)
     public void testDuplicateElementInArray(){
