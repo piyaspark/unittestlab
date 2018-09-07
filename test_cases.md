@@ -16,11 +16,11 @@
 
 ---
 
-## Test cases for binarySearch
+### Test cases for binarySearch
 
 * testBinarySearch: Test that the binarySearch can work correctly.
 
-* testDuplicateElementInArray: Test that the binarySearch can work with arrays that have different element.
+* testDuplicateElementInArray: Test that the binarySearch can work only with arrays that have different element.
 
 * testNoElementInArray: Test that when no element in the arrays, it will return -1.
 
