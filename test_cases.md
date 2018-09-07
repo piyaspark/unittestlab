@@ -16,7 +16,7 @@
 
 ---
 
-## Test cases for binarySearch
+### Test cases for binarySearch
 
 * testBinarySearch: Test that the binarySearch can work correctly.
 
