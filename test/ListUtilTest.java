@@ -1,7 +1,9 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -101,25 +103,51 @@ public class ListUtilTest {
         assertEquals(10,ListUtil.countUnique(unique2));
     }
 
-//    @Test
-//    public void testBinarySearch(){
-//        String[] array = {"London", "Liverpool", "Manchester"};
-//        assertEquals(0,ListUtil.binarySearch(array,"London"));
-//
-//    }
-//
-//    @Test
-//    public void testMultipleElementInArray(){
-//        String[] array = {"London", "Liverpool", "Liverpool", "Manchester", "Liverpool"};
-//        assertEquals(1,ListUtil.binarySearch(array,"Liverpool"));
-//        assertNotEquals(2,ListUtil.binarySearch(array,"Liverpool"));
-//        assertNotEquals(4,ListUtil.binarySearch(array,"Liverpool"));
-//    }
-//
-//    @Test
-//    public void testNoElementInArray(){
-//        String[] array = {"London", "Liverpool", "Liverpool", "Manchester", "Liverpool"};
-//        assertEquals(-1,ListUtil.binarySearch(array,"Amsterdam"));
-//
-//    }
+
+    /**
+     * Test that the binarySearch can work correctly.
+     */
+    @Test
+    public void testBinarySearch(){
+        String[] array = {"London", "Liverpool", "Manchester"};
+        Arrays.sort(array);
+        assertEquals(Arrays.binarySearch(array,"Liverpool"),ListUtil.binarySearch(array,"Liverpool"));
+
+        String[] array2 = {"A","C","D","B"};
+        Arrays.sort(array2);
+        assertEquals(Arrays.binarySearch(array2,"D"),ListUtil.binarySearch(array2,"D"));
+
+        Integer[] array3 = {6,2,4,1};
+        Arrays.sort(array3);
+        assertEquals(Arrays.binarySearch(array3,1),ListUtil.binarySearch(array3,1));
+    }
+
+    /**
+     * Test that the binarySearch can work with arrays that have different element.
+     */
+    @Test (expected = AssertionError.class)
+    public void testDuplicateElementInArray(){
+        String[] array = {"London", "Liverpool", "Liverpool", "Manchester", "Liverpool"};
+        assertEquals(AssertionError.class,ListUtil.binarySearch(array,"Liverpool"));
+
+    }
+
+    /**
+     * Test that when no element in the arrays, it will return -1.
+     */
+    @Test
+    public void testNoElementInArray(){
+        String[] array = {"London", "Liverpool", "Liverpool", "Manchester", "Liverpool"};
+        assertEquals(Arrays.binarySearch(array,"Amsterdam"),ListUtil.binarySearch(array,"Amsterdam"));
+
+    }
+
+    /**
+     * Test that when element is null, it will throw an exception.
+     */
+    @Test (expected = IllegalArgumentException.class)
+    public void testThrowException(){
+        String[] array = {"London", "Liverpool", "Manchester"};
+        assertEquals(IllegalArgumentException.class,ListUtil.binarySearch(array,null));
+    }
 }
